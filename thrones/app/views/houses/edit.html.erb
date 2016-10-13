@@ -1,2 +1,8 @@
-<h1>Houses#edit</h1>
-<p>Find me in app/views/houses/edit.html.erb</p>
+<h2>Edit House</h2>
+<%= render "form" %>
+
+<%= form_for @house, method: :delete, data: {confirm: "Are you sure?"} do |h| %>
+  <%= h.submit "Delete House" %>
+<% end %>
+
+<%= link_to "Return", houses_path %>

@@ -12,10 +12,10 @@ stark = House.create(name:"Baratheon", castle:"Storm's End", banner_url:"http://
 stark = House.create(name:"Tyrell", castle:"Highgaren", banner_url:"http://www.songoficeandfiregroup.com/wp-content/uploads/2014/04/house_tyrell_by_liquidsouldesign-d467jau.jpg" )
 
 
-ned = Character.create(name:"Ned Stark", title:"Lord", img_url:"http://i.ndtvimg.com/i/2015-09/ned-stark_640x480_71443426196.jpg", house_id:2)
-jon = Character.create(name:"Jon Snow", title:"Steward of the Nights Watch", img_url:"https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/15/09/jon-snow.jpg", house_id:2)
+ned = Character.create(name:"Ned Stark", title:"Hand", img_url:"http://i.ndtvimg.com/i/2015-09/ned-stark_640x480_71443426196.jpg", house_id:2)
+jon = Character.create(name:"Jon Snow", title:"Steward", img_url:"https://static.independent.co.uk/s3fs-public/thumbnails/image/2015/06/15/09/jon-snow.jpg", house_id:2)
 
-jaime = Character.create(name:"Jaime Lannister", title:"Kingslayer", img_url:"http://img1.looper.com/img/gallery/why-game-of-thrones-jaime-lannister-is-more-important-than-we-realized/intro.jpg", house_id:3)
+jaime = Character.create(name:"Jaime Lannister", title:"Sir", img_url:"http://img1.looper.com/img/gallery/why-game-of-thrones-jaime-lannister-is-more-important-than-we-realized/intro.jpg", house_id:3)
 cersei = Character.create(name:"Cersei Lannister", title:"Queen", img_url:"http://vignette4.wikia.nocookie.net/gameofthrones/images/c/c6/Cersei-lannister-lena-headey-helen-sloan.jpeg/revision/20120424220038", house_id:3)
 
 robert = Character.create(name:"Robert Baratheon", title:"King", img_url:"http://vignette1.wikia.nocookie.net/hieloyfuego/images/e/ee/Robert_Baratheon_HBO.JPG/revision/latest?cb=20120124224134", house_id:4)
