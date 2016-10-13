@@ -1,17 +1,21 @@
 <h1><%= @house.name %></h1>
 
-<img src="<%=@house.banner_url%>" alt="banner" />
+  <img src="<%=@house.banner_url%>" alt="banner" />
 
-<li>Castle: <%= @house.castle %></li>
+      <li>Castle: <%= @house.castle %></li>
 
-<% @house.characters.each do |character| %>
+            <% @house.characters.each do |character| %>
 
-  <li><%= link_to "#{character.name}", house_character_path(@house,character) %></li>
+                  <li><%= link_to "#{character.name}", house_character_path(@house,character) %></li>
 
-<% end %>
+            <% end %>
 
+      <% if @house.user %>
+      <p>Created by <%= @house.user.email%></p>
+      <% end %>
+
+
+<!-- navigation links -->
 <%= link_to "Add character to house", new_house_character_path(@house) %>
-
 <%= link_to "Edit House", edit_house_path %>
-
 <%= link_to "Return", houses_path %>

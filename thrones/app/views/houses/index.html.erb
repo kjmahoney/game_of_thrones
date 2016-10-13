@@ -1,9 +1,16 @@
 <h1>Houses</h1>
 
 <% @houses.each do |house| %>
+
   <ul><%=link_to "#{house.name}", house %>
+
     <li><%=house.castle %></li>
-  </ul>
+
+      <% if house.user_id == current_user.id %>
+        <li>Created by you!</li>
+        <% end %>
+
+    </ul>
 <% end %>
 
 <%= link_to "Establish New House", new_house_path %>
