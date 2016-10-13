@@ -1,19 +1,14 @@
 <h1>Houses</h1>
+<%= link_to "Establish New House", new_house_path %>
 
+<div id = "houses">
 <% @houses.each do |house| %>
 
   <ul><%=link_to "#{house.name}", house %>
 
-    <li><%=house.castle %></li>
-
-    <% if current_user %>
-      <% if house.user_id == current_user.id %>
-        <li>Created by you!</li>
-        <% end %>
-    <%else%>
-    <% end %>
+    <li><img id = "indexPix" src="<%=house.banner_url%>" alt="house_image" /></li>
 
     </ul>
-<% end %>
 
-<%= link_to "Establish New House", new_house_path %>
+<% end %>
+</div>

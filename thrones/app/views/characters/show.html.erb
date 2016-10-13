@@ -1,12 +1,12 @@
 <h2><%= @character.title + " " + @character.name + " of " + @character.house.castle%></h2>
 
-<img src="<%=@character.img_url%>" alt="image" />
+<p><img src="<%=@character.img_url%>" alt="image" /></p>
 
-<%if @character.user%>
+  <%if @character.user%>
   <p>Created by <%=@character.user.email%> </p>
   <%end%>
 
 
-<%= link_to "Edit Character", edit_house_character_path(@house) %>
+<p><%= link_to "Edit Character", edit_house_character_path(@house) %></p>
 
-<%= link_to "Return", house_path(@house) %>
+<p><%= link_to "Return", house_path(@house) %></p>

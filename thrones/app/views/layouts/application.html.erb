@@ -9,13 +9,15 @@
   </head>
 
   <body>
+  <div id = "logMenu">
     <% if !current_user %>
-      <%= link_to "Sign up", new_user_registration_path %>
-      <%= link_to "Sign in", new_user_session_path %>
+      <p id = "rowList"><%= link_to "Sign up ", new_user_registration_path %></p>
+      <p id = "rowList"><%= link_to "Sign in ", new_user_session_path %></p>
     <% else %>
-      <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      <%= current_user.email %>
+      <p><%= link_to "Sign out:", destroy_user_session_path, :method => :delete %></p>
+      <p id = "rowList"><%= current_user.email %></p>
   <% end %>
+</div>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>

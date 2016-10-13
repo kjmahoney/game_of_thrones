@@ -2,17 +2,27 @@
 
   <img src="<%=@house.banner_url%>" alt="banner" />
 
-      <li>Castle: <%= @house.castle %></li>
+      <li>Castle:  <%= @house.castle %></li>
 
+      <h3> Characters </h3>
+
+        <h4>
             <% @house.characters.each do |character| %>
 
                   <li><%= link_to "#{character.name}", house_character_path(@house,character) %></li>
 
             <% end %>
+        </h4>
 
       <% if @house.user %>
-      <p>Created by <%= @house.user.email%></p>
-      <% end %>
+
+        <% if @house.user_id == current_user.id %>
+          <li>Created by you</li>
+      <%else%>
+          <p>Created by <%= @house.user.email%></p>
+      <%end %>
+      <%else%>
+      <%end%>
 
 
 <!-- navigation links -->
