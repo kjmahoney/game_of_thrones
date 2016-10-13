@@ -26,9 +26,9 @@ class CharactersController < ApplicationController
   end
 
   def update
-  @character = Character.find(params[:id])
-  @character.update(character_params)
-  redirect_to house_character_path
+    @character = Character.find(params[:id])
+    @character.update(character_params)
+    redirect_to house_character_path
   end
 
   def destroy

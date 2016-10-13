@@ -6,9 +6,12 @@
 
     <li><%=house.castle %></li>
 
+    <% if current_user %>
       <% if house.user_id == current_user.id %>
         <li>Created by you!</li>
         <% end %>
+    <%else%>
+    <% end %>
 
     </ul>
 <% end %>
