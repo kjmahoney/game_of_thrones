@@ -1,0 +1,11 @@
+<%= form_for [@house, @character] do |h| %>
+  <%= h.label :Name %>
+  <%= h.text_field :name %>
+  <%= h.label :Title %>
+  <%= h.text_field :title %>
+  <%= h.label :Image_url %>
+  <%= h.text_field :img_url %>
+  <%= h.label :House_id %>
+  <%= h.text_field :house_id %>
+  <%= h.submit %>
+<% end %>

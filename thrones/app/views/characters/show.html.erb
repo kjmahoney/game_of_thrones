@@ -1,2 +1,8 @@
-<h1>Characters#show</h1>
-<p>Find me in app/views/characters/show.html.erb</p>
+<h2><%= @character.title + " " + @character.name + " of " + @character.house.castle%></h2>
+
+<img src="<%=@character.img_url%>" alt="image" />
+
+
+<%= link_to "Edit Character", edit_house_character_path(@house) %>
+
+<%= link_to "Return", house_path(@house) %>

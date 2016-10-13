@@ -4,6 +4,14 @@
 
 <li>Castle: <%= @house.castle %></li>
 
+<% @house.characters.each do |character| %>
+
+  <li><%= link_to "#{character.name}", house_character_path(@house,character) %></li>
+
+<% end %>
+
+<%= link_to "Add character to house", new_house_character_path(@house) %>
+
 <%= link_to "Edit House", edit_house_path %>
 
 <%= link_to "Return", houses_path %>

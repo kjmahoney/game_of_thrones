@@ -1,2 +1,7 @@
-<h1>Characters#edit</h1>
-<p>Find me in app/views/characters/edit.html.erb</p>
+<h2>Edit Character</h2>
+<%= render "form" %>
+
+<%= form_for [@house, @character], method: :delete, data: {confirm: "Are you sure?"} do |c|%>
+  <%= c.submit "Remove this character" %>
+<% end %>
+  
