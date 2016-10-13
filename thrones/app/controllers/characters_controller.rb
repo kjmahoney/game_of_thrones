@@ -15,9 +15,14 @@ class CharactersController < ApplicationController
   end
 
   def create
-    @house = House.find(params[:house_id])
-    @character = @house.characters.create(character_params)
-    redirect_to house_path(@house)
+    if !current_user
+      redirect_to houses_path
+      flash[:alert] = "Sign in to create a house"
+    else
+      @house = House.find(params[:house_id])
+      @character = @house.characters.create!(character_params.merge(user: current_user))
+      redirect_to houses_path
+    end
   end
 
   def edit
@@ -27,14 +32,23 @@ class CharactersController < ApplicationController
 
   def update
     @character = Character.find(params[:id])
-    @character.update(character_params)
-    redirect_to house_character_path
+    if @character.user_id == current_user
+      @character.update!(character_params)
+      @character.save
+    else
+      flash[:alert] = "Only the creator of a character may edit it"
+    end
+      redirect_to house_character_path
   end
 
   def destroy
     @character = Character.find(params[:id])
-    @character.destroy
-    redirect_to houses_path
+    if @character.user.id == current_user.id
+      @character.destroy
+    else
+      flash[:alert] = "Only the creator of a character may delete it"
+    end
+      redirect_to houses_path
   end
 
   private

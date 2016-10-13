@@ -28,7 +28,7 @@ class HousesController < ApplicationController
 
   def update
     @house = House.find(params[:id])
-      if @house.user_id == current_user
+      if @house.user_id == current_user.id
           @house.update(update_params)
         else
           flash[:alert] = "A house can only be edited by its creator"
